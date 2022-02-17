@@ -8,7 +8,7 @@ import team.memoryleak.domkol.dagger.component.AppComponent;
 import team.memoryleak.domkol.dagger.component.MainActivityComponent;
 import team.memoryleak.domkol.dagger.module.MainActivityModule;
 import team.memoryleak.domkol.ui.main.App;
-import team.memoryleak.domkol.ui.main.MainFragment;
+import team.memoryleak.domkol.ui.fragment.MainFragment;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -18,11 +18,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_activity);
-        if (savedInstanceState == null) {
-            getSupportFragmentManager().beginTransaction()
-                    .replace(R.id.container, MainFragment.newInstance())
-                    .commitNow();
-        }
+
+        getMainActivityComponent().inject(this);
     }
 
     /**

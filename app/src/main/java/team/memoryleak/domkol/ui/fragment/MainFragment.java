@@ -1,4 +1,4 @@
-package team.memoryleak.domkol.ui.main;
+package team.memoryleak.domkol.ui.fragment;
 
 import androidx.lifecycle.ViewModelProvider;
 
@@ -13,6 +13,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import team.memoryleak.domkol.R;
+import team.memoryleak.domkol.ui.main.MainViewModel;
 
 public class MainFragment extends Fragment {
 
