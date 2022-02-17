@@ -65,7 +65,7 @@ dependencies {
 
     // add room database dependency
     // https://developer.android.com/training/data-storage/room
-    def room_version = "2.3.0"
+    def room_version = '2.4.1'
     implementation "androidx.room:room-runtime:$room_version"
     annotationProcessor "androidx.room:room-compiler:$room_version" // For Kotlin use kapt instead of annotationProcessor
 
