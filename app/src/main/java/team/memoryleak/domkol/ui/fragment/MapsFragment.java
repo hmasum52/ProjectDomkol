@@ -4,6 +4,9 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -14,7 +17,10 @@ import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.BitmapDescriptor;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 
 import org.jetbrains.annotations.NotNull;
@@ -74,5 +80,28 @@ public class MapsFragment extends Fragment implements OnMapReadyCallback{
     @Override
     public void onMapReady(@NotNull GoogleMap googleMap) {
         Log.d(TAG, "onMapReady: google map is ready");
+
+        googleMap.getUiSettings().setZoomControlsEnabled(true);
+
+        LatLng latLng = new LatLng(23.8851391,90.3153899);
+        Marker marker = addMarker(googleMap, latLng, "Southern Clothings LTD");
+        marker.showInfoWindow();
+        googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(latLng, 16));
+    }
+
+    public Bitmap getMarkerBitmap(Context context){
+        Bitmap bitmap = BitmapFactory.decodeResource( context.getResources(), R.drawable.fire);
+        return Bitmap.createScaledBitmap(bitmap, 100 , 100, false);
+    }
+
+    private Marker addMarker(GoogleMap map, LatLng latLng, String title){
+        BitmapDescriptor bitmapDescriptor = BitmapDescriptorFactory.fromBitmap(getMarkerBitmap(getContext()));
+        return map.addMarker(new MarkerOptions()
+                .position(latLng)
+                .flat(true)
+                .icon(bitmapDescriptor)
+                .title(title)
+
+        );
     }
 }

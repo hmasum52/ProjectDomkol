@@ -101,4 +101,6 @@ dependencies {
     // notification
     implementation 'com.onesignal:OneSignal:[4.0.0, 4.99.99]'
 
+    implementation 'de.hdodenhof:circleimageview:3.1.0'
+
 }
