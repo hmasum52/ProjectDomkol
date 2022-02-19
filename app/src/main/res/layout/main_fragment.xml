@@ -7,32 +7,14 @@
     android:layout_height="match_parent"
     tools:context=".ui.fragment.MainFragment">
 
-    <com.airbnb.lottie.LottieAnimationView
-        android:id="@+id/searchNearByLottie"
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_marginHorizontal="4dp"
+        android:id="@+id/menuRV"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:lottie_autoPlay="true"
-        app:lottie_loop="true"
-        app:lottie_speed="3"
-        app:lottie_fileName="scanning_nearby.json"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        app:spanCount="2"
+        tools:listitem="@layout/card_home_page_service"
         />
-
-    <androidx.recyclerview.widget.RecyclerView
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        android:id="@+id/peopleNearbyRV"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        app:layout_constraintBottom_toTopOf="@+id/rescanBtn"
-        app:layout_constraintTop_toTopOf="@+id/searchNearByLottie"
-        tools:listitem="@layout/card_people_nearby" />
-
-    <Button
-        android:text="RESCAN"
-        android:id="@+id/rescanBtn"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="?colorPrimary"
-        app:layout_constraintBottom_toBottomOf="parent" />
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

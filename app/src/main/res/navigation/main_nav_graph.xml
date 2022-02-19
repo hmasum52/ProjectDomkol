@@ -8,11 +8,21 @@
     <fragment
         android:id="@+id/mainFragment"
         android:name="team.memoryleak.domkol.ui.fragment.MainFragment"
-        android:label="main_fragment"
+        android:label="Domkol"
         tools:layout="@layout/main_fragment" />
     <fragment
         android:id="@+id/mapsFragment"
         android:name="team.memoryleak.domkol.ui.fragment.MapsFragment"
-        android:label="fragment_maps"
+        android:label="Fire Zone"
         tools:layout="@layout/fragment_maps" />
+    <fragment
+        android:id="@+id/scanPeopleFragment"
+        android:name="team.memoryleak.domkol.ui.fragment.ScanPeopleFragment"
+        android:label="People Nearby"
+        tools:layout="@layout/fragment_scan_people" />
+    <fragment
+        android:id="@+id/floorMapFragment"
+        android:name="team.memoryleak.domkol.ui.fragment.FloorMapFragment"
+        android:label="Safe Exit"
+        tools:layout="@layout/fragment_floor_map" />
 </navigation>

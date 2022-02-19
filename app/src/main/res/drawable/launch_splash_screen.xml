@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android" android:opacity="opaque">
+
+    <!-- background color, same as theme -->
+    <item android:drawable="@android:color/white"/>
+
+    <!-- app logo -->
+
+    <item
+        android:width="230dp"
+        android:height="75dp"
+        android:drawable="@drawable/app_logo"
+        android:gravity="center_horizontal|center_vertical"
+        />
+</layer-list>
